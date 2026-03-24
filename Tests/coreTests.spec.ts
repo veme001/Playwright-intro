@@ -46,12 +46,12 @@ test.describe('Parabank logged in core features', () => {
         await expect(page.locator('body')).toContainText('Bill Payment Complete');
         })
 
-        test('Transfer funds between to accounts', async ({page}) => {
+    test('Transfer funds between to accounts', async ({page}) => {
         await page.locator('a[href="transfer.htm"]').click();
         await page.locator('#amount').fill('100');
- 
+        await page.locator('input[value="Transfer"]').click();
 
-        await expect(page.locator('body')).toContainText('Bill Payment Complete');
+        await expect(page.locator('body')).toContainText('Transfer Complete');
         })
 
 })
